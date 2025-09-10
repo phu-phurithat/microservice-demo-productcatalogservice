@@ -1,7 +1,7 @@
 # General project info
 enable: true
 language: "go"          # java | node | go | python | react | etc
-language_version: "21"    # e.g. 8, 11, 17, 21 for Java OR node 20
+language_version: "1.23"    # e.g. 8, 11, 17, 21 for Java OR node 20
 build_tool: "go"       # maven | gradle | npm | yarn | go
 
 # Build configuration
