@@ -1,0 +1,34 @@
+# General project info
+enable: true
+language: "go"          # java | node | go | python | react | etc
+language_version: "21"    # e.g. 8, 11, 17, 21 for Java OR node 20
+build_tool: "go"       # maven | gradle | npm | yarn | go
+
+# Build configuration
+build_image: true
+build_args:
+  - "BUILD_NUMBER=$BUILD_NUMBER"
+  - "DEPLOY=$DEPLOY"
+  - "BRANCH=$BRANCH"
+  - "JENKINS_URL=$JENKINS_URL"
+  - "COMMIT=$COMMIT"
+
+# Security checks
+security:
+  code: true
+  secret: true
+  dependency: true
+  image: true
+  # sast: true               # SAST
+  # secret: true             # secret scanning
+  # sca: true         # dependency scan
+  # container: true              # container scan
+  eol: true                # EOL / version check
+  dast:
+    enable: true
+    port: "3000"
+    paths:
+      - "/"
+      - "/api"
+      - "/health"
+      - "/admin/login"
